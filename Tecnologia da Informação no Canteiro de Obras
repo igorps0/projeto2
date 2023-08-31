@@ -1,0 +1,116 @@
+\documentclass[12pt, a4paper]{article} %tamanho da fonte 12pts, papel A4 e duas coluna (twocolumn).
+\usepackage[brazil]{babel} %traduz o documento para o português do Brasil.
+\usepackage[utf8]{inputenc} %pacote reconhece acentuação em português
+\usepackage[left=3cm,top=2cm,right=1.5cm,bottom=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{lipsum}
+\usepackage{gensymb}
+\usepackage{natbib}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage[]{algorithm2e}
+\usepackage{minted}
+\usepackage{textcomp,gensymb}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{lipsum}
+\usepackage{gensymb}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{textcomp,gensymb}
+\usepackage{listings}
+
+
+
+
+
+%%%%%%% CORPO DO TRABALHO  %%%%%%%
+\begin{document}
+
+\begin{titlepage}
+	
+\begin{figure}[htb]
+	\centering
+	\includegraphics[scale=0.9]{Figuras/logouneb.png}
+	\label{logouneb}
+\end{figure}
+
+\begin{center} 
+	\textbf{UNIVERSIDADE DO ESTADO DA BAHIA - UNEB\\
+		DEPARTAMENTO DE CIÊNCIAS EXATAS E DA TERRA
+		I}\\\vspace{6cm}
+	\textbf{Tecnologia da Informação no Canteiros de Obras }\\\vspace{4cm} %especificar melhor o título
+    
+\hfill
+\begin{minipage}{8cm}
+Trabalho apresentado a UNEB para obtenção de nota na disciplina Computação Aplicada à Engenharia.
+\end{minipage}
+	
+	\begin{flushleft}
+		\textbf{Discentes:} Caio Henrique, Igor Santos\\
+            {Orientador:} Prof° Dr° Robson Marinho
+		
+		\vspace{5cm}
+		
+	\end{flushleft}
+	Salvador\\
+	2023
+\end{center}
+\end{titlepage}
+
+\newpage %Leva a introdução para uma nova página
+
+\tableofcontents
+
+
+\newpage
+{Resumo Expandido}\\
+
+\section{Introdução}
+\hspace{0.5cm}
+A incorporação da tecnologia da informação no canteiro de obras tem revolucionado a indústria da construção, aprimorando processos e impulsionando a eficiência. O uso de ferramentas como o Building Information Modeling (BIM) tem permitido um planejamento mais detalhado e preciso, facilitando a identificação de possíveis problemas antes mesmo do início da construção.
+
+
+Além disso, a Internet das Coisas (IoT) desempenha um papel crucial ao conectar máquinas e equipamentos, permitindo o monitoramento em tempo real e a coleta de dados para análise. Isso resulta em manutenção preditiva, reduzindo o tempo de inatividade e aumentando a vida útil dos equipamentos.
+
+
+Drones são usados para realizar levantamentos topográficos e inspeções visuais, proporcionando uma visão abrangente do canteiro de obras e agilizando processos que antes eram demorados e caros. A realidade aumentada (RA) e realidade virtual (RV) são empregadas para melhorar a visualização do projeto, permitindo que as equipes compreendam melhor os detalhes e possíveis desafios.
+
+
+A automação também está ganhando terreno, com robôs sendo usados para tarefas repetitivas e perigosas, como alvenaria e soldagem. Isso não apenas melhora a segurança dos trabalhadores, mas também acelera a conclusão das tarefas.
+
+
+Em resumo, a tecnologia da informação no canteiro de obras está transformando a maneira como as construções são planejadas, executadas e gerenciadas. Ela promove a colaboração entre equipes, reduz erros, otimiza o uso de recursos e eleva os padrões de qualidade,
+ tornando a indústria da construção mais eficiente e inovadora.
+
+
+
+\newpage
+
+\section{ Objetivo}
+O objetivo deste texto é examinar como a Tecnologia da Informação está sendo aplicada no contexto dos canteiros de obras. Serão abordadas as diversas formas em que a TI tem transformado a indústria da construção, desde a comunicação entre equipes até o controle de processos automatizados. Além disso, o texto também se propõe a destacar os benefícios e desafios da implementação dessas tecnologias no ambiente do canteiro de obras.
+Otimização do Processo Construtivo:
+Um dos principais objetivos da TI no canteiro de obras é otimizar o processo construtivo. Isso é alcançado por meio da adoção de sistemas de modelagem 3D, como o Building Information Modeling (BIM), que permite a criação de representações digitais precisas e detalhadas de projetos. Esses modelos digitais facilitam o planejamento, a identificação antecipada de conflitos, a coordenação de equipes e a tomada de decisões informadas, resultando em projetos mais eficientes e redução de erros.
+
+Melhoria da Comunicação e Colaboração:
+A TI busca melhorar a comunicação e colaboração entre as equipes envolvidas em um projeto de construção. Plataformas de compartilhamento de informações e comunicação em tempo real permitem que arquitetos, engenheiros, gerentes de projeto e empreiteiros colaborem de maneira eficaz, independentemente da localização geográfica. Isso reduz a chance de retrabalho, acelera o progresso do projeto e melhora a compreensão coletiva das metas e requisitos.
+
+Em resumo, o objetivo da Tecnologia da Informação no canteiro de obras é transformar a indústria da construção, tornando-a mais eficiente, colaborativa, segura e sustentável. A adoção estratégica de soluções tecnológicas não apenas moderniza os métodos tradicionais, mas também abre caminho para uma nova era de construção que se adapta às demandas de um mundo em constante evolução.
+\newpage
+
+\section{Metodologia}
+
+Para a elaboração deste texto, foi realizada uma pesquisa abrangente que envolveu a análise de artigos científicos, relatórios técnicos, estudos de caso e informações provenientes de empresas do ramo da construção e tecnologia. A coleta de dados foi complementada por meio de entrevistas com profissionais experientes no setor, como engenheiros, gestores de projetos e especialistas em TI, a fim de obter uma perspectiva prática sobre a integração da TI em canteiros de obras.
+
+A análise comparativa dos dados coletados permitiu identificar tendências emergentes, exemplos notáveis de aplicação da TI e os resultados alcançados com a adoção dessas tecnologias. Com base nessa análise, o texto abordará de forma aprofundada as principais áreas em que a TI está causando um impacto, os desafios associados à sua implementação e as estratégias que estão sendo empregadas para maximizar os benefícios proporcionados por essa evolução tecnológica no ambiente da construção civil.
+
+
+\end{document}
+
