@@ -1,0 +1,266 @@
+\documentclass[12pt, a4paper]{article} %tamanho da fonte 12pts, papel A4 e duas coluna (twocolumn).
+\usepackage[brazil]{babel} %traduz o documento para o português do Brasil.
+\usepackage[utf8]{inputenc} %pacote reconhece acentuação em português
+\usepackage[left=3cm,top=2cm,right=1.5cm,bottom=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{lipsum}
+\usepackage{gensymb}
+\usepackage{natbib}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage[]{algorithm2e}
+\usepackage{minted}
+\usepackage{textcomp,gensymb}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{lipsum}
+\usepackage{gensymb}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{textcomp,gensymb}
+\usepackage{listings}
+
+
+
+
+
+%%%%%%% CORPO DO TRABALHO  %%%%%%%
+\begin{document}
+
+\begin{titlepage}
+	
+\begin{figure}[htb]
+	\centering
+	\includegraphics[scale=0.9]{Figuras/logouneb.png}
+	\label{logouneb}
+\end{figure}
+
+\begin{center} 
+	\textbf{UNIVERSIDADE DO ESTADO DA BAHIA - UNEB\\
+		DEPARTAMENTO DE CIÊNCIAS EXATAS E DA TERRA
+		I}\\\vspace{6cm}
+	\textbf{Tecnologia da Informação nos Canteiros de Obras }\\\vspace{4cm} %especificar melhor o título
+    
+\hfill
+\begin{minipage}{8cm}
+Trabalho apresentado a UNEB para obtenção de nota na disciplina Computação Aplicada à Engenharia.
+\end{minipage}
+	
+	\begin{flushleft}
+		\textbf{Discentes:} Caio Henrique, Igor Santos\\
+            {Orientador:} Prof° Dr° Robson Marinho
+		
+		\vspace{5cm}
+		
+	\end{flushleft}
+	Salvador\\
+	2023
+\end{center}
+\end{titlepage}
+
+\newpage %Leva a introdução para uma nova página
+
+\tableofcontents
+
+
+\newpage
+
+
+\section{Introdução}
+\hspace{0.5cm}
+A incorporação da tecnologia da informação no canteiro de obras tem revolucionado a indústria da construção, aprimorando processos e impulsionando a eficiência. O uso de ferramentas como o Building Information Modeling (BIM) tem permitido um planejamento mais detalhado e preciso, facilitando a identificação de possíveis problemas antes mesmo do início da construção.
+
+
+Além disso, a Internet das Coisas (IoT) desempenha um papel crucial ao conectar máquinas e equipamentos, permitindo o monitoramento em tempo real e a coleta de dados para análise. Isso resulta em manutenção preditiva, reduzindo o tempo de inatividade e aumentando a vida útil dos equipamentos.
+
+
+Drones são usados para realizar levantamentos topográficos e inspeções visuais, proporcionando uma visão abrangente do canteiro de obras e agilizando processos que antes eram demorados e caros. A realidade aumentada (RA) e realidade virtual (RV) são empregadas para melhorar a visualização do projeto, permitindo que as equipes compreendam melhor os detalhes e possíveis desafios.
+
+
+A automação também está ganhando terreno, com robôs sendo usados para tarefas repetitivas e perigosas, como alvenaria e soldagem. Isso não apenas melhora a segurança dos trabalhadores, mas também acelera a conclusão das tarefas.
+
+
+A indústria da construção tem uma longa história de processos complexos, custos imprevisíveis e prazos desafiadores. No entanto, à medida que a TI se integra profundamente no setor, suas aplicações têm demonstrado um potencial revolucionário. Como afirmou recentemente o engenheiro e pesquisador John D. Hohol, "A TI não é apenas uma ferramenta, mas uma mudança de paradigma na construção". O uso de BIM, por exemplo, permite uma visualização tridimensional detalhada dos projetos, reduzindo conflitos de design e custos imprevistos. A IoT, por sua vez, possibilita o monitoramento em tempo real de ativos, equipamentos e condições no canteiro de obras, aumentando a segurança e otimizando a logística. A AR e a VR oferecem uma perspectiva imersiva das estruturas planejadas, melhorando a comunicação e a tomada de decisões. A IA e o Machine Learning, através da análise de dados, preveem problemas antes que ocorram e aprimoram a eficiência dos processos de construção.
+
+Neste contexto, é imperativo investigar o impacto e as implicações do uso da TI na construção civil. Este trabalho tem como objetivo explorar as diversas facetas da Tecnologia da Informação aplicada no canteiro de obras, abordando tanto os benefícios como os desafios associados a essa transformação. Por meio de uma revisão de literatura abrangente e da análise de estudos de caso relevantes, buscamos destacar como a TI está redefinindo a indústria da construção, tornando-a mais eficiente, segura e sustentável. A compreensão dessas tendências é fundamental para profissionais, pesquisadores e stakeholders da construção civil, uma vez que a TI representa não apenas um avanço tecnológico, mas uma oportunidade crucial para o aprimoramento contínuo do setor.
+
+
+
+\newpage
+
+\section{ Objetivo}
+O objetivo deste texto é examinar como a Tecnologia da Informação está sendo aplicada no contexto dos canteiros de obras. Serão abordadas as diversas formas em que a TI tem transformado a indústria da construção, desde a comunicação entre equipes até o controle de processos automatizados. Além disso, o texto também se propõe a destacar os benefícios e desafios da implementação dessas tecnologias no ambiente do canteiro de obras.
+Otimização do Processo Construtivo:
+Um dos principais objetivos da TI no canteiro de obras é otimizar o processo construtivo. Isso é alcançado por meio da adoção de sistemas de modelagem 3D, como o Building Information Modeling (BIM), que permite a criação de representações digitais precisas e detalhadas de projetos. Esses modelos digitais facilitam o planejamento, a identificação antecipada de conflitos, a coordenação de equipes e a tomada de decisões informadas, resultando em projetos mais eficientes e redução de erros.
+
+Melhoria da Comunicação e Colaboração:
+A TI busca melhorar a comunicação e colaboração entre as equipes envolvidas em um projeto de construção. Plataformas de compartilhamento de informações e comunicação em tempo real permitem que arquitetos, engenheiros, gerentes de projeto e empreiteiros colaborem de maneira eficaz, independentemente da localização geográfica. Isso reduz a chance de retrabalho, acelera o progresso do projeto e melhora a compreensão coletiva das metas e requisitos.
+
+Em resumo, o objetivo da Tecnologia da Informação no canteiro de obras é transformar a indústria da construção, tornando-a mais eficiente, colaborativa, segura e sustentável. A adoção estratégica de soluções tecnológicas não apenas moderniza os métodos tradicionais, mas também abre caminho para uma nova era de construção que se adapta às demandas de um mundo em constante evolução.
+\newpage
+
+\section{Metodologia}
+
+Para a elaboração deste texto, foi realizada uma pesquisa abrangente que envolveu a análise de artigos científicos, relatórios técnicos, estudos de caso e informações provenientes de empresas do ramo da construção e tecnologia. A coleta de dados foi complementada por meio de entrevistas com profissionais experientes no setor, como engenheiros, gestores de projetos e especialistas em TI, a fim de obter uma perspectiva prática sobre a integração da TI em canteiros de obras.
+
+A análise comparativa dos dados coletados permitiu identificar tendências emergentes, exemplos notáveis de aplicação da TI e os resultados alcançados com a adoção dessas tecnologias. Com base nessa análise, o texto abordará de forma aprofundada as principais áreas em que a TI está causando um impacto, os desafios associados à sua implementação e as estratégias que estão sendo empregadas para maximizar os benefícios proporcionados por essa evolução tecnológica no ambiente da construção civil.
+
+\newpage
+
+\section{Beneficios}
+A tecnologia da informação oferece uma série de benefícios nos canteiros de obras, incluindo:
+
+\subsection{ Melhoria na Comunicação}: Softwares e aplicativos permitem uma comunicação mais eficaz entre a equipe, fornecedores e partes interessadas, reduzindo erros de comunicação e atrasos.
+
+
+\subsection{Gestão de Projetos} Ferramentas de gerenciamento de projetos, como o BIM (Modelagem da Informação da Construção), auxiliam na programação, planejamento e execução eficiente das obras.
+
+
+\subsection{Monitoramento em Tempo Real} Sensores e dispositivos IoT (Internet das Coisas) permitem o monitoramento em tempo real de condições no canteiro, como temperatura, umidade e segurança, facilitando a tomada de decisões informadas.
+
+
+\subsection{Redução de Custos} A automação de tarefas repetitivas e a análise de dados podem reduzir custos operacionais, economizando recursos financeiros.
+
+
+
+Em resumo, a tecnologia da informação desempenha um papel fundamental na modernização e melhoria da eficiência nos canteiros de obras, contribuindo para projetos mais seguros, econômicos e sustentáveis.
+\newpage
+\section{Revisão de Literatura}
+\subsection{História da Tecnologia da Informação na Construção}
+A história da Tecnologia da Informação (TI) na construção é rica e tem evoluído ao longo das décadas. Segundo Kim e Teizer (2013), os primeiros sistemas de modelagem digital de construção surgiram nas décadas de 1970 e 1980. No entanto, foi com a disseminação do Building Information Modeling (BIM) que a TI transformou profundamente a indústria. O BIM, como apontado por Succar (2009), permite a criação de modelos virtuais 3D detalhados de projetos de construção, proporcionando maior clareza e precisão na fase de planejamento.
+\subsection{Conceitos Fundamentais (BIM, IoT, IA, etc.)}
+A base da revolução tecnológica no canteiro de obras são conceitos fundamentais como BIM, Internet das Coisas (IoT) e Inteligência Artificial (IA). Segundo Eastman et al. (2011), o BIM é uma abordagem que integra processos e informações para permitir uma colaboração mais eficaz. A IoT, por sua vez, envolve a interconexão de dispositivos e sensores para coleta de dados em tempo real (Chang et al., 2016). A IA, como observa Moraes e Barbosa (2018), utiliza algoritmos para analisar dados complexos, fornecendo insights valiosos para a tomada de decisões.
+\subsection{Desafios na Indústria da Construção}
+A indústria da construção enfrenta desafios significativos, como destaca Aibinu e Venkatesh (2012). Entre os principais desafios estão a falta de coordenação entre as equipes, escalas de projeto complexas e prazos apertados. A TI surge como uma resposta a esses desafios, oferecendo ferramentas para melhorar a comunicação, coordenação e eficiência.
+\subsection{Benefícios da TI no Canteiro de Obras}
+Os benefícios da TI no canteiro de obras são evidentes. De acordo com Hartmann e Fischer (2019), o uso do BIM pode resultar em economias de custos substanciais, redução de erros de construção e aceleração do cronograma de projetos. A IoT, conforme afirmado por Kamilaris et al. (2017), contribui para a segurança do local de trabalho, monitorando condições perigosas em tempo real. A IA, como ressaltado por Vaidya et al. (2018), aprimora a eficiência da gestão de projetos por meio de análises preditivas.
+\subsection{Estudos de Caso Relevantes}
+Vários estudos de caso demonstram a aplicação bem-sucedida da TI no canteiro de obras. Por exemplo, o projeto do aeroporto Heathrow Terminal 5, conforme descrito por Laryea et al. (2013), utilizou o BIM para melhorar a colaboração e reduzir custos. O uso de sensores IoT no canteiro de obras da Torre de Xangai, conforme documentado por Meng et al. (2017), aprimorou a segurança dos trabalhadores. Tais exemplos ilustram como a TI está transformando a indústria da construção e proporcionando benefícios tangíveis.
+
+Essa revisão de literatura destaca a evolução da Tecnologia da Informação na construção, os conceitos-chave envolvidos, os desafios enfrentados pelo setor, os benefícios da implementação da TI no canteiro de obras e exemplos concretos de sucesso. Ela serve como base sólida para a compreensão da importância da TI na indústria da construção e as oportunidades que ela oferece para melhorar a eficiência, a segurança e a qualidade dos projetos.
+
+\newpage
+
+\section{BIM(Building Information Modeling)}
+O Building Information Modeling (BIM) é uma abordagem essencial na indústria da construção que utiliza modelos tridimensionais detalhados para melhorar o planejamento, coordenação e execução de projetos nos canteiros de obras. Ele oferece benefícios significativos, como a detecção precoce de conflitos, otimização do planejamento, cálculo automatizado de materiais e análise de custos. Além disso, o BIM continua sendo útil após a conclusão da construção, facilitando a operação, manutenção e treinamento da equipe. Sua integração com dispositivos móveis e tecnologias de campo aprimora a acessibilidade às informações no local da obra, tornando-o uma ferramenta versátil e valiosa na indústria da construção.
+\subsection{Aspectos importantes}
+O uso do Building Information Modeling (BIM) nos canteiros de obras é importante porque:
+\begin{itemize}
+    \item modelagem 3D detalhada do projeto. - Facilita a coordenação entre equipes e disciplinas.
+    \item Melhora o planejamento e a programação da obra.
+    \item Calcula automaticamente quantidades de materiais e analisa custos
+    \item  Calcula automaticamente quantidades de materiais e analisa custos.
+    \item { Auxilia na operação, manutenção e treinamento pós-construção.}
+    \item{Promove a sustentabilidade e integra-se com tecnologias de campo.} 
+    
+\end{itemize
+
+ Esses aspectos tornam o BIM uma ferramenta valiosa na indústria da construção, melhorando eficiência e precisão.
+ 
+\newpage
+
+\section{\textbf{AUTOMAÇÃO DE MAQUINAS}}
+Em um mercado tão competitivo e tão importante, modernizar os processos de construção vem sendo praticamente obrigatório para as construtoras. Em suma, a automação na Construção Civil consiste em aparelhos eletrônicos para o controle do bom funcionamento de um sistema ou processo, tendo sua execução automática em várias frentes de operação em controle e segurança, como por exemplo, painéis de comando, quadros de distribuição bem dimensionados, nobreaks, barramento blindado, sistemas de monitoramento, proteção de circuitos, etc., reduzindo custos e agilizando todo o processo.
+
+Por que devo investir em automação na Construção Civil?
+
+Acredito que você já deve ter visto pessoas empilhando tijolos ou outros materiais para construção na cabeça, não é mesmo? Com a aplicação de projetos de automação essa realidade tende a mudar. Na prática, a automação em processos de Construção Civil se dá pela abordagem de robôs, drones, máquinas e equipamentos para a execução desses serviços.
+
+A revolução no mercado e, especialmente no ramo da Construção Civil oferecerá aos trabalhadores tecnologias mais eficientes para rastreamento de informações em tempo real, garantindo segurança e rapidez nas tomadas de decisão. Além disso, o uso de sensores permitirá a monitoração de máquinas e equipamentos, que serão reprogramados, readaptados e reinstalados, de modo a garantir que todo e qualquer trabalho saia conforme o planejado pela construtora.
+\subsection{Beneficios da automação}
+• A taxa de acidentes diminui;
+
+• A força bruta é substituída por intelecto (evolução);
+
+• Não existe desperdício de materiais, o que acaba sendo benéfico também para o ambiente;
+
+• É rentável a médio e longo prazo;
+
+• Torna os serviços na Construção Civil mais eficientes;
+
+• Os prazos de entrega nos serviços se tornam mais rápidos.
+
+Investir em processos de automação na Construção Civil é a melhor maneira de manter-se à frente no mercado, oferecendo segurança, praticidade e rentabilidade para a empresa e para o cliente.
+
+\newpage
+\section{(IoT) e CANTEIRO DE OBRAS INTELIGENTE}
+\subsection{Introdução à IoT na Construção}
+A Internet das Coisas (IoT) tem desempenhado um papel cada vez mais importante na transformação do canteiro de obras em um ambiente inteligente. Segundo Li et al. (2020), a IoT na construção envolve a conectividade de sensores e dispositivos em tempo real, permitindo uma monitorização e recolha de dados precisa e contínua. Isso possibilita uma visão abrangente do ambiente de construção e dos ativos envolvidos.
+\subsection{Sensores e Dispositivos IoT}
+A implementação bem-sucedida da IoT no canteiro de obras depende da utilização de sensores e dispositivos IoT adequados. Sensores de temperatura, umidade, movimento e localização, como mencionado por Fan et al. (2018), podem ser distribuídos no local de construção para coletar informações críticas em tempo real. Além disso, a utilização de dispositivos vestíveis, como capacetes inteligentes, pode melhorar a segurança dos trabalhadores, conforme destacado por Lin et al. (2019).
+\subsection{Monitoramento de Ativos e Equipamentos}
+A IoT desempenha um papel crucial no monitoramento de ativos e equipamentos no canteiro de obras. Segundo Lee et al. (2021), a capacidade de rastrear a localização, o status e o desempenho de máquinas e ferramentas em tempo real contribui para a eficiência operacional. Além disso, a manutenção preditiva, como apontado por Shi et al. (2019), é facilitada pela capacidade da IoT de prever falhas antes que ocorram, reduzindo os custos de manutenção.
+\subsection{Segurança no Canteiro de Obras com IoT}
+A segurança no canteiro de obras é uma preocupação fundamental, e a IoT desempenha um papel vital nesse contexto. Conforme observado por Jin et al. (2020), a IoT permite a detecção imediata de situações de risco, como quedas de altura ou exposição a produtos químicos perigosos, permitindo ações de resposta mais rápidas. Isso contribui para a redução de acidentes e a preservação da integridade dos trabalhadores.
+\newpage
+\section{ Gestão de Projetos e Colaboração Online}
+\subsection{Software de Gerenciamento de Projetos}
+A gestão de projetos na construção é fundamental para o sucesso de empreendimentos complexos. A TI trouxe uma série de soluções inovadoras, incluindo softwares de gerenciamento de projetos. Como mencionado por Love et al. (2019), plataformas como o Autodesk BIM 360 e o Procore têm se tornado essenciais para a coordenação de equipes, o acompanhamento de prazos e o gerenciamento de documentos. Essas ferramentas proporcionam uma visão centralizada das informações do projeto, reduzindo o risco de erros e atrasos.
+\subsection{Melhorias na Comunicação e Colaboração}
+A colaboração eficaz entre as partes interessadas é crucial na construção, e a TI tem desempenhado um papel fundamental na melhoria da comunicação e colaboração. Conforme destacado por Westerman et al. (2019), plataformas de colaboração online permitem que equipes distribuídas trabalhem de maneira mais eficiente e compartilhem informações em tempo real. Isso facilita a tomada de decisões informadas e a resolução rápida de problemas, reduzindo os custos e os atrasos.
+\subsection{Experiências Práticas com Plataformas de Colaboração}
+Experiências práticas com a implementação de plataformas de colaboração online mostram resultados positivos. De acordo com Song et al. (2020), a utilização do Microsoft Teams em um grande projeto de construção melhorou a comunicação entre equipes e reduziu significativamente o tempo gasto em reuniões presenciais. Além disso, a plataforma de colaboração permitiu que as informações fossem facilmente acessadas por todos os envolvidos, melhorando a transparência e a responsabilidade.
+\newpage
+\section{Desafios e Barreiras na Implementação da TI no Canteiro de Obras}
+\subsection{Resistência à Mudança}
+Apesar dos benefícios evidentes da TI, a resistência à mudança é um dos desafios mais comuns enfrentados na implementação de novas tecnologias. Como destacado por Zhu et al. (2017), muitos profissionais da construção podem resistir à adoção de ferramentas de TI devido a preocupações com a curva de aprendizado e a interrupção das práticas habituais. Superar essa resistência requer uma abordagem cuidadosa, incluindo treinamento adequado e comunicação eficaz.
+\subsection{Custos de Implementação}
+Outro desafio significativo na implementação da TI no canteiro de obras é o custo associado. De acordo com Tang et al. (2020), a aquisição de hardware, software e a formação da equipe podem representar um investimento substancial. No entanto, é importante notar que esses custos podem ser compensados pelos benefícios a longo prazo, como economia de tempo e recursos, redução de erros e aumento da eficiência.
+\subsection{Falhas Comuns e Lições Aprendidas}
+À medida que mais empresas da construção adotam a TI, foram observadas algumas falhas comuns e lições valiosas foram aprendidas. Como ressaltado por Jiang et al. (2018), uma falha comum é a falta de integração adequada entre as diferentes ferramentas de TI utilizadas no canteiro de obras. A integração eficaz é essencial para garantir que os sistemas funcionem de maneira harmoniosa. Lições como essa destacam a importância de uma implementação cuidadosamente planejada e gerenciada.
+
+\newpage
+\section{Considerações Finais}
+\subsection{Recapitulação dos Principais Pontos Discutidos}
+Ao longo desta pesquisa, exploramos profundamente a influência da Tecnologia da Informação (TI) na indústria da construção, especificamente no canteiro de obras. Iniciamos revisitando a história da TI na construção e destacando como o Building Information Modeling (BIM), a Internet das Coisas (IoT) e a Inteligência Artificial (IA) se tornaram conceitos fundamentais que revolucionaram a forma como os projetos são concebidos, planejados e executados. Essas tecnologias têm permitido uma colaboração mais eficaz, monitoramento em tempo real, previsões de problemas e melhorias significativas em termos de eficiência e segurança.
+
+Examinamos os benefícios da TI no canteiro de obras, como economias de custos, redução de erros de construção, aumento da segurança e aceleração dos cronogramas de projetos. Por meio de estudos de caso relevantes, pudemos constatar como essas tecnologias são aplicadas com sucesso em projetos reais, demonstrando sua eficácia na prática.
+
+Além disso, exploramos como a IoT está transformando o canteiro de obras em um ambiente inteligente, com o uso de sensores e dispositivos para monitorar ativos, equipamentos e condições de trabalho em tempo real. Essa transformação tem contribuído para a segurança dos trabalhadores e a otimização dos recursos.
+
+Analisamos também como a gestão de projetos e a colaboração online estão sendo aprimoradas com o uso de software específico, facilitando a coordenação de equipes distribuídas e a comunicação eficaz entre todas as partes interessadas. Isso resulta em projetos mais bem-sucedidos e entregues dentro dos prazos e orçamentos previstos.
+\subsection{Conclusões Gerais}
+Com base na pesquisa realizada, fica claro que a TI está desempenhando um papel transformador na indústria da construção, tornando os canteiros de obras mais eficientes, seguros e produtivos. A integração de tecnologias como BIM, IoT e IA está revolucionando a forma como os projetos são concebidos, executados e gerenciados. Essas mudanças não são apenas benéficas em termos de eficiência e qualidade, mas também têm o potencial de reduzir os impactos ambientais da construção.
+\newpage
+\section{Recomendações para Futuras Pesquisas}
+
+
+Esta revisão da literatura forneceu uma visão abrangente da importância da Tecnologia da Informação no canteiro de obras e suas várias aplicações. À medida que a indústria da construção continua a evoluir e a adotar cada vez mais a TI, é fundamental que os profissionais, pesquisadores e partes interessadas estejam cientes dessas tendências e estejam preparados para abraçar as oportunidades que a TI oferece para o futuro da construção.
+Olhando para o futuro, é evidente que a pesquisa sobre TI no canteiro de obras continuará a desempenhar um papel crucial. Existem várias áreas que merecem investigação adicional:
+
+Integração de Novas Tecnologias: À medida que novas tecnologias, como a impressão 3D e a robótica, continuam a evoluir, é importante explorar como essas inovações podem ser integradas de maneira eficaz no canteiro de obras para aumentar ainda mais a automação e a eficiência.
+
+Ética e Segurança de Dados: Com o aumento do uso de dados na construção, é fundamental investigar questões éticas e garantir a segurança das informações sensíveis no ambiente digital.
+
+Acessibilidade para Empresas de Pequeno e Médio Porte: É importante considerar como as pequenas e médias empresas da construção podem ter acesso à TI de maneira acessível e eficaz, não apenas as grandes empreiteiras.
+
+Melhores Práticas e Estudos de Caso Locais: Continuar a documentar casos de uso bem-sucedidos e identificar as melhores práticas específicas para a realidade brasileira na construção civil.
+
+Em suma, a pesquisa sobre a TI no canteiro de obras é essencial para entender como essa tecnologia está moldando a indústria e como podemos aproveitar ao máximo seu potencial. À medida que avançamos para um futuro cada vez mais tecnológico, a colaboração entre pesquisadores, profissionais da construção e stakeholders do setor é fundamental para impulsionar a inovação e aprimorar a indústria da construção como um todo.
+\newpage
+\section{Referências}
+Moura, C., & Anacleto, J. (2019). Building Information Modeling (BIM) no Brasil: Panorama, Desafios e Perspectivas.
+
+Lima, M. A., & Ferreira, J. C. (2018). Internet das Coisas (IoT) na Construção Civil: Aplicações e Potencialidades.
+
+Barros, S. A., & Formoso, C. T. (2017). Tecnologia da Informação para a Gestão da Qualidade na Construção Civil.
+
+Oliveira, F. J., & Ometto, A. R. (2016). Inteligência Artificial e Aprendizado de Máquina na Construção Civil: Revisão e Aplicações Brasileiras.
+
+Lopes, C. F., & Almeida, F. A. (2015). Gestão de Projetos na Construção Civil com Software BIM: Casos Brasileiros.
+Moura, C., & Anacleto, J. (2019). Building Information Modeling (BIM) no Brasil: Panorama, Desafios e Perspectivas.
+
+
+
+
+
+
+\end{document}
+
