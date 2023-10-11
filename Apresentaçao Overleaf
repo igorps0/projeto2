@@ -1,0 +1,175 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Welcome to Overleaf --- just edit your LaTeX on the left,
+% and we'll compile it for you on the right. If you open the
+% 'Share' menu, you can invite other users to edit at the same
+% time. See www.overleaf.com/learn for more info. Enjoy!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{beamer}
+
+\usetheme{Copenhagen}
+
+%Information to be included in the title page:
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.25]{logo_uneb.png}
+	\label{logouneb}
+\end{figure}
+\title{TECNOLOGIA DA INFORMAÇÃO NO CANTEIRO DE OBRAS/CALCULO DE CUSTO DE MATERIAIS}
+\author{Caio Henrique Pinheiro Oliveira, Igor Pinto dos Santos}
+\institute{UNEB}
+\date{2023}
+
+
+\begin{document}
+
+\frame{\titlepage}
+
+
+\begin{frame}
+\frametitle{ INTRODUÇÃO}
+Tecnologia da informação na construção civil também se beneficia do uso da linguagem de programação Python. Python é amplamente utilizado para automatizar tarefas repetitivas, processar dados e criar ferramentas personalizadas para análise e modelagem. Sua flexibilidade e vasta biblioteca de recursos tornam Python uma escolha popular para desenvolver soluções de software que podem melhorar a eficiência no canteiro de obras. Além disso, a aplicação de aprendizado de máquina e análise de dados em Python permite prever problemas antes que ocorram, otimizando ainda mais os processos de construção. Assim, Python desempenha um papel importante na integração da tecnologia da informação na indústria da construção, contribuindo para a automação e aprimoramento contínuo do setor.
+
+
+
+\end{frame}
+
+\begin{frame}
+\frametitle{ Objetivo}
+O objetivo principal deste trabalho é investigar e demonstrar como a programação em Python pode ser aplicada para atingir os seguintes objetivos na construção civil:
+
+Automação de Tarefas Repetitivas: Utilizar scripts em Python para automatizar tarefas rotineiras, como o processamento de documentos, relatórios e medições. Isso economiza tempo e reduz erros humanos.
+
+Gerenciamento de Projetos: Desenvolver aplicativos em Python para gerenciar projetos de construção, incluindo o acompanhamento do progresso, alocação de recursos e agendamento de tarefas.
+
+
+
+Sustentabilidade e Eficiência Energética: Desenvolver soluções em Python para otimizar o consumo de energia e recursos naturais, tornando os edifícios mais sustentáveis.
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{ Programas utilizados}
+Contudo, partindo desse ponto pode-se pensar no Python como uma ferramenta facilitadora desse processo, pois Python é uma linguagem de programação de nível alto, que usa instruções humanas e mais abstratas, incrementada através de um conjunto de instruções que permitem que uma máquina execute tarefas, como a calculadora de custo de matériais no canteiro de obras
+
+
+\end{frame}
+\begin{frame}
+\frametitle{ OUTRAS FERRAMENTAS}
+Além do Python, várias ferramentas desempenharam um papel fundamental no desenvolvimento deste projeto:
+
+Visual Studio Code (VSCode)
+Git e GitHub
+Trello
+Overleaf
+Bibliotecas Python (TKINTER )
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{ Metodologia}
+Conduzimos uma pesquisa ampla envolvendo análise de diversos tipos de fontes, desde artigos científicos até entrevistas com profissionais do setor de construção e tecnologia. Identificamos tendências e exemplos notáveis de integração da TI em canteiros de obras e discutimos os desafios e estratégias para maximizar os benefícios dessa evolução tecnológica na construção civil.
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Proposta do programa}
+A proposta deste programa é fornecer aos profissionais da construção civil, engenheiros, arquitetos, empreiteiros e outros envolvidos na área uma ferramenta simples e eficaz para calcular o custo total de materiais de construção. A aplicação visa melhorar a eficiência, economizar tempo e reduzir erros comuns na estimativa de custos.
+
+
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Script}
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[scale=0.37]{WhatsApp Image 2023-10-10 at 20.55.10.jpeg}
+    \label{fig:my_label}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Script}
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[scale=0.38]{WhatsApp Image 2023-10-10 at 20.55.10 (1).jpeg}
+    \label{fig:my_label}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Script}
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[scale=0.555]{WhatsApp Image 2023-10-10 at 22.09.47.jpeg}
+    \label{fig:my_label}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Script}
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[scale=0.33]{WhatsApp Image 2023-10-10 at 22.09.32.jpeg}
+    \label{fig:my_label}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Script}
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[scale=0.555]{WhatsApp Image 2023-10-10 at 22.06.57.jpeg}
+    \label{fig:my_label}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Script}
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[scale=0.3]{REDE DE PETRIS.jpeg}
+    \label{fig:my_label}
+\end{figure}
+
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Conclusão}
+Este projeto exemplifica a aplicação prática da tecnologia da informação na construção civil por meio de uma "Calculadora de Custo de Materiais de Construção" em Python. Destaca a importância da pesquisa para identificar tendências e desafios nessa integração da TI na indústria. A tecnologia demonstrada simplifica o cálculo de custos, economizando tempo e reduzindo erros. Em resumo, ressalta a relevância da TI na modernização e melhoria da eficiência na construção civil.
+\end{frame}
+
+\begin{frame}
+\frametitle{Referências}
+FEREGUETTI, Larissa. O que é a linguage Pmython e como ela está presente na engenharia?. [S. l.], 12 maio 2019. Disponível em: https://engenharia360.com/linguagem-python-na-engenharia/. Acesso em: 23 mar. 2023. 
+
+COUTINHO, Thiago. Como o Python pode ajudar um engenheiro e quais as suas aplicações na engenharia?. [S. l.], 18 mar. 2021. Disponível em: https://www.voitto.com.br/blog/artigo/python-para-engenheiros. Acesso em: 23 mar. 2023
+
+
+
+
+
+\end{frame}
+
+
+\end{document}
+
