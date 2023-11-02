@@ -1,0 +1,127 @@
+# Importa as bibliotecas tkinter e ttk, que são usadas para criar a interface gráfica
+import tkinter as tk
+from tkinter import ttk
+
+# Define a classe MaterialConstrucao
+class MaterialConstrucao:
+    def __init__(self, nome, preco_unitario, quantidade):
+        # Inicializa um objeto MaterialConstrucao com nome, preço unitário e quantidade
+        self.nome = nome
+        self.preco_unitario = preco_unitario
+        self.quantidade = quantidade
+
+    def calcular_custo_total(self):
+        # Calcula o custo total multiplicando o preço unitário pela quantidade
+        return self.preco_unitario * self.quantidade
+
+# Dicionário para armazenar informações sobre os materiais
+materiais = {
+    "cimento": {"preco_unitario": 10.0},
+    "tijolos": {"preco_unitario": 0.5},
+    "madeira": {"preco_unitario": 20.0}
+}
+
+historico_calculos = []  # Lista para armazenar o histórico de cálculos
+
+# Função para calcular o custo
+def calcular_custo():
+    nome_material = nome_entry.get()  # Obtém o nome do material da entrada de texto
+    preco_unitario_str = preco_unitario_entry.get()  # Obtém o preço unitário da entrada de texto
+    quantidade_str = quantidade_entry.get()  # Obtém a quantidade da entrada de texto
+
+    if not nome_material or not preco_unitario_str or not quantidade_str:
+        # Verifica se algum dos campos está vazio e exibe uma mensagem de erro
+        resultado_label.config(
+            text="Por favor, preencha todos os campos.", foreground="red")
+        return
+    
+    if nome_material not in materiais:
+        # Verifica se o material não está no dicionário de materiais e exibe uma mensagem de erro
+        resultado_label.config(text="Material desconhecido.", foreground="red")
+        return
+
+    try:
+        float(preco_unitario_str)  # Tenta converter o preço unitário em um número de ponto flutuante
+    except ValueError:
+        # Se a conversão falhar, exibe uma mensagem de erro
+        resultado_label.config(
+            text="Preço unitário inválido. Insira um número válido.", foreground="red")
+        return
+
+    try:
+        quantidade = int(quantidade_str)  # Tenta converter a quantidade em um número inteiro
+    except ValueError:
+        # Se a conversão falhar, exibe uma mensagem de erro
+        resultado_label.config(
+            text="Quantidade inválida. Insira um número inteiro válido.", foreground="red")
+        return
+
+    material = MaterialConstrucao(
+        nome_material, materiais[nome_material]["preco_unitario"], quantidade)
+    custo_total = material.calcular_custo_total()  # Calcula o custo total do material
+
+    nome_material = nome_material.upper()  # Converte o nome do material para maiúsculas
+    resultado_label.config(text=f"O custo total do material {nome_material} é de R$ {custo_total:.2f}", foreground="green")
+
+    # Limpa as entradas de texto
+    nome_entry.delete(0, tk.END)
+    preco_unitario_entry.delete(0, tk.END)
+    quantidade_entry.delete(0, tk.END)
+
+    historico_calculos.append(
+        f"Material: {nome_material}, Custo: R$ {custo_total:.2f}")
+
+    historico_text.config(state=tk.NORMAL)
+    historico_text.delete("1.0", tk.END)  # Limpa o histórico anterior
+
+    for calculo in historico_calculos:
+        # Adiciona os cálculos anteriores ao histórico
+        historico_text.insert(tk.END, calculo + "\n")
+
+    historico_text.config(state=tk.DISABLED)
+
+# Configuração da interface gráfica
+root = tk.Tk()  # Cria a janela principal
+root.title("Calculadora de Custo de Materiais de Construção")  # Define o título da janela
+
+frame1 = ttk.Frame(root)  # Cria um quadro dentro da janela principal
+frame1.pack(padx=10, pady=10)  # Define o preenchimento do quadro
+
+# Rótulos e entradas de texto para nome, preço unitário, quantidade e resultado
+ttk.Label(frame1, text="Nome do material:").grid(row=0, column=0, sticky=tk.W)
+ttk.Label(frame1, text="Preço unitário (R$):").grid(
+    row=1, column=0, sticky=tk.W)
+ttk.Label(frame1, text="Quantidade:").grid(row=2, column=0, sticky=tk.W)
+ttk.Label(frame1, text="Resultado:").grid(row=4, column=0, sticky=tk.W)
+
+nome_entry = ttk.Entry(frame1)  # Entrada de texto para o nome do material
+preco_unitario_entry = ttk.Entry(frame1)  # Entrada de texto para o preço unitário
+quantidade_entry = ttk.Entry(frame1)  # Entrada de texto para a quantidade
+
+# Posições das entradas de texto
+nome_entry.grid(row=0, column=1, sticky=tk.W)
+preco_unitario_entry.grid(row=1, column=1, sticky=tk.W)
+quantidade_entry.grid(row=2, column=1, sticky=tk.W)
+
+# Botão para calcular o custo
+calcular_button = ttk.Button(
+    frame1, text="Calcular Custo", command=calcular_custo)
+calcular_button.grid(row=3, column=1)
+
+resultado_label = ttk.Label(frame1, text="")  # Rótulo para exibir o resultado
+resultado_label.grid(row=4, column=1, sticky=tk.W)  # Posição do rótulo de resultado
+
+historico_label = ttk.Label(frame1, text="Histórico de Cálculos:")  # Rótulo para o histórico
+historico_label.grid(row=5, column=0, columnspan=2, sticky=tk.W)  # Posição do rótulo de histórico
+
+historico_text = tk.Text(frame1, state=tk.DISABLED,
+                         wrap=tk.WORD, height=5, width=40)  # Área de texto para o histórico
+historico_text.grid(row=6, column=0, columnspan=2)  # Posição da área de texto
+
+root.mainloop()  # Inicia o loop principal da interface gráfica
+
+
+
+Segue as mudanças do codigo : Essas são as mudanças feitas além de adicionar um histórico : ----Neste código, usamos o método delete para limpar os campos de entrada (nome_entry, preco_unitario_entry, quantidade_entry). O método delete recebe dois argumentos: o índice inicial (0) e o índice final (tk.END), o que efetivamente exclui todo o texto presente nos campos de entrada.
+Dessa forma, após o cálculo do custo total, os campos de entrada serão limpos, facilitando a inserção de novos dados pelo usuário. A ação de limpar os campos de entrada após o cálculo não é exatamente uma manipulação de strings, mas sim uma manipulação dos widgets de entrada (Entry) na interface gráfica usando a biblioteca Tkinter. No código que mencionei, estamos usando métodos específicos de widgets de entrada do Tkinter para limpar o texto presente nesses campos, mais especificamente o método delete. Isso é uma ação relacionada à interface gráfica do usuário (GUI) e não uma manipulação direta de strings. --- Vamos adicionar uma funcionalidade que, após calcular o custo total, mostra uma versão em maiúsculas do nome do material no rótulo de resultado. Para fazer isso, você pode usar o método upper() para converter o texto do nome em maiúsculas: o texto inserido no campo de entrada é convertido para maiúsculas usando o método upper() antes de ser exibido no rótulo de resultado. Isso é uma manipulação de string para alterar a formatação do texto. --- Validação de input. Essa validação é feita para garantir que os valores inseridos nos campos de entrada sejam válidos antes de prosseguir com o cálculo. Por exemplo, você pode validar se o preço unitário é um número válido e se a quantidade é um número inteiro válido. Isso ajuda a evitar erros e comportamentos inesperados do programa quando valores inválidos são inseridos.
+Verificamos se o preço unitário é um número válido usando um bloco try...except para capturar exceções. Se o valor não puder ser convertido para um número válido, exibimos uma mensagem de erro e saímos da função.Verificamos se a quantidade é um número inteiro válido da mesma forma que o preço unitário. Se não for um número inteiro válido, exibimos uma mensagem de erro e saímos da função.Controle de fluxo por meio de estruturas condicionais (if e try...except) para realizar a validação de entrada e tomar decisões com base nos valores inseridos nos campos de entrada.Aqui estão as partes do código que envolvem controle de fluxo:Uso de if para verificar se os campos de entrada estão vazios:Uso de try...except para verificar se o preço unitário e a quantidade são números válidos:Neste código, a lista historico_calculos é usada para armazenar o histórico de cálculos, e o histórico é exibido em um widget de texto na interface gráfica. Cada vez que um cálculo é realizado, o resultado é adicionado à lista e o histórico é atualizado na interface.---- Neste código, o dicionário materiais armazena informações sobre diferentes materiais de construção, e o código verifica se o material inserido pelo usuário está presente no dicionário para calcular o custo com base no preço unitário correspondente. Isso permite a organização e acesso eficiente às informações sobre os materiais.-----Nesse código, foram feitas melhorias na interface, incluindo a mudança do rótulo "Preço unitário" para "Preço unitário (R$)" para esclarecer a unidade monetária e a adição de cores para destacar mensagens de erro e resultados bem-sucedidos.
