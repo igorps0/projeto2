@@ -4,7 +4,7 @@ from tkinter import ttk
 
 # Define a classe MaterialConstrucao
 class MaterialConstrucao:
-    def __init__(self, nome, preco_unitario, quantidade):
+    def _init_(self, nome, preco_unitario, quantidade):
         # Inicializa um objeto MaterialConstrucao com nome, preço unitário e quantidade
         self.nome = nome
         self.preco_unitario = preco_unitario
@@ -16,9 +16,11 @@ class MaterialConstrucao:
 
 # Dicionário para armazenar informações sobre os materiais
 materiais = {
-    "cimento": {"preco_unitario": 10.0},
-    "tijolos": {"preco_unitario": 0.5},
-    "madeira": {"preco_unitario": 20.0}
+    "cimento": {"preco_unitario": 115.0},
+    "tijolos": {"preco_unitario": 2.5},
+    "madeira": {"preco_unitario": 18.5},
+    "telha ceramica": {"preco_unitario": 1.99},
+    "gesso": {"preco_unitario": 38.5}
 }
 
 historico_calculos = []  # Lista para armazenar o histórico de cálculos
