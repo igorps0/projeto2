@@ -1,0 +1,124 @@
+# Importa as bibliotecas tkinter e ttk, que são usadas para criar a interface gráfica
+import tkinter as tk
+from tkinter import ttk 
+
+# Define a classe MaterialConstrucao
+class MaterialConstrucao:
+    def __init__(self, nome, preco_unitario, quantidade):
+        # Inicializa um objeto MaterialConstrucao com nome, preço unitário e quantidade
+        self.nome = nome
+        self.preco_unitario = preco_unitario
+        self.quantidade = quantidade
+
+    def calcular_custo_total(self):
+        # Calcula o custo total multiplicando o preço unitário pela quantidade
+        return self.preco_unitario * self.quantidade
+
+# Dicionário para armazenar informações sobre os materiais
+materiais = {
+    "cimento": {"preco_unitario": 115.0},
+    "tijolos": {"preco_unitario": 2.5},
+    "madeira": {"preco_unitario": 18.5},
+    "telha ceramica": {"preco_unitario": 1.99},
+    "gesso": {"preco_unitario": 38.5}
+}
+
+historico_calculos = []  # Lista para armazenar o histórico de cálculos
+
+# Função para calcular o custo
+def calcular_custo():
+    nome_material = nome_entry.get()  # Obtém o nome do material da entrada de texto
+    preco_unitario_str = preco_unitario_entry.get()  # Obtém o preço unitário da entrada de texto
+    quantidade_str = quantidade_entry.get()  # Obtém a quantidade da entrada de texto
+
+    if not nome_material or not preco_unitario_str or not quantidade_str:
+        # Verifica se algum dos campos está vazio e exibe uma mensagem de erro
+        resultado_label.config(
+            text="Por favor, preencha todos os campos.", foreground="red")
+        return
+    
+    if nome_material not in materiais:
+        # Verifica se o material não está no dicionário de materiais e exibe uma mensagem de erro
+        resultado_label.config(text="Material desconhecido.", foreground="red")
+        return
+
+    try:
+        float(preco_unitario_str)  # Tenta converter o preço unitário em um número de ponto flutuante
+    except :
+        # Se a conversão falhar, exibe uma mensagem de erro
+        resultado_label.config(
+            text="Preço unitário inválido. Insira um número válido.", foreground="red")
+        return
+
+    try:
+        quantidade = int(quantidade_str)  # Tenta converter a quantidade em um número inteiro
+    except :
+        # Se a conversão falhar, exibe uma mensagem de erro
+        resultado_label.config(
+            text="Quantidade inválida. Insira um número inteiro válido.", foreground="red")
+        return
+
+    material = MaterialConstrucao(
+        nome_material, materiais[nome_material]["preco_unitario"], quantidade)
+    custo_total = material.calcular_custo_total()  # Calcula o custo total do material
+
+    nome_material = nome_material.upper()  # Converte o nome do material para maiúsculas
+    resultado_label.config(text=f"O custo total do material {nome_material} é de R$ {custo_total:.2f}", foreground="green")
+
+    # Limpa as entradas de texto
+    nome_entry.delete(0, tk.END)
+    preco_unitario_entry.delete(0, tk.END)
+    quantidade_entry.delete(0, tk.END)
+
+    # Adiciona uma string ao histórico de cálculos
+    historico_calculos.append(
+        f"Material: {nome_material}, Custo: R$ {custo_total:.2f}")
+
+    historico_text.config(state=tk.NORMAL)
+    historico_text.delete("1.0", tk.END)  # Limpa o histórico anterior
+
+    for calculo in historico_calculos:
+        # Adiciona os cálculos anteriores ao histórico
+        historico_text.insert(tk.END, calculo + "\n")
+
+    historico_text.config(state=tk.DISABLED)
+
+# Configuração da interface gráfica
+root = tk.Tk()  # Cria a janela principal
+root.title("Calculadora de Custo de Materiais de Construção")  # Define o título da janela
+
+frame1 = ttk.Frame(root)  # Cria um quadro dentro da janela principal
+frame1.pack(padx=10, pady=10)  # Define o preenchimento do quadro
+
+# Rótulos e entradas de texto para nome, preço unitário, quantidade e resultado
+ttk.Label(frame1, text="Nome do material:").grid(row=0, column=0, sticky=tk.W)
+ttk.Label(frame1, text="Preço unitário (R$):").grid(
+    row=1, column=0, sticky=tk.W)
+ttk.Label(frame1, text="Quantidade:").grid(row=2, column=0, sticky=tk.W)
+ttk.Label(frame1, text="Resultado:").grid(row=4, column=0, sticky=tk.W)
+
+nome_entry = ttk.Entry(frame1)  # Entrada de texto para o nome do material
+preco_unitario_entry = ttk.Entry(frame1)  # Entrada de texto para o preço unitário
+quantidade_entry = ttk.Entry(frame1)  # Entrada de texto para a quantidade
+
+# Posições das entradas de texto
+nome_entry.grid(row=0, column=1, sticky=tk.W)
+preco_unitario_entry.grid(row=1, column=1, sticky=tk.W)
+quantidade_entry.grid(row=2, column=1, sticky=tk.W)
+
+# Botão para calcular o custo
+calcular_button = ttk.Button(
+    frame1, text="Calcular Custo", command=calcular_custo)
+calcular_button.grid(row=3, column=1)
+
+resultado_label = ttk.Label(frame1, text="")  # Rótulo para exibir o resultado
+resultado_label.grid(row=4, column=1, sticky=tk.W)  # Posição do rótulo de resultado
+
+historico_label = ttk.Label(frame1, text="Histórico de Cálculos:")  # Rótulo para o histórico
+historico_label.grid(row=5, column=0, columnspan=2, sticky=tk.W)  # Posição do rótulo de histórico
+
+historico_text = tk.Text(frame1, state=tk.DISABLED,
+                         wrap=tk.WORD, height=5, width=40)  # Área de texto para o histórico
+historico_text.grid(row=6, column=0, columnspan=2)  # Posição da área de texto
+
+root.mainloop()  # Inicia o loop principal da interface gráfica
