@@ -1,10 +1,10 @@
 # Importa as bibliotecas tkinter e ttk, que são usadas para criar a interface gráfica
 import tkinter as tk
-from tkinter import ttk
+from tkinter import ttk 
 
 # Define a classe MaterialConstrucao
 class MaterialConstrucao:
-    def _init_(self, nome, preco_unitario, quantidade):
+    def __init__(self, nome, preco_unitario, quantidade):
         # Inicializa um objeto MaterialConstrucao com nome, preço unitário e quantidade
         self.nome = nome
         self.preco_unitario = preco_unitario
@@ -44,7 +44,7 @@ def calcular_custo():
 
     try:
         float(preco_unitario_str)  # Tenta converter o preço unitário em um número de ponto flutuante
-    except ValueError:
+    except :
         # Se a conversão falhar, exibe uma mensagem de erro
         resultado_label.config(
             text="Preço unitário inválido. Insira um número válido.", foreground="red")
@@ -52,7 +52,7 @@ def calcular_custo():
 
     try:
         quantidade = int(quantidade_str)  # Tenta converter a quantidade em um número inteiro
-    except ValueError:
+    except :
         # Se a conversão falhar, exibe uma mensagem de erro
         resultado_label.config(
             text="Quantidade inválida. Insira um número inteiro válido.", foreground="red")
@@ -70,6 +70,7 @@ def calcular_custo():
     preco_unitario_entry.delete(0, tk.END)
     quantidade_entry.delete(0, tk.END)
 
+    # Adiciona uma string ao histórico de cálculos
     historico_calculos.append(
         f"Material: {nome_material}, Custo: R$ {custo_total:.2f}")
 
@@ -121,6 +122,7 @@ historico_text = tk.Text(frame1, state=tk.DISABLED,
 historico_text.grid(row=6, column=0, columnspan=2)  # Posição da área de texto
 
 root.mainloop()  # Inicia o loop principal da interface gráfica
+
 
 
 
